@@ -1,0 +1,33 @@
+git clone https://github.com/emscripten-core/emsdk.git
+cd emsdk
+./emsdk install latest
+./emsdk activate latest
+emsdk_env.bat
+git clone https://github.com/opencv/opencv.git
+cd opencv
+mkdir build
+cd build
+emcmake cmake -DCMAKE_BUILD_TYPE=Release ^ -DCMAKE_INSTALL_PREFIX=C:/Users/haris/OneDrive/Desktop/Webfresh/opencv/install ^ -DCMAKE_PREFIX_PATH=C:/Users/haris/OneDrive/Desktop/Webfresh/opencv/build_opencv ^ -DOPENCV_DIR=C:/Users/haris/OneDrive/Desktop/Webfresh/opencv/build_opencv ^ -D OPENCV_EXTRA_MODULES_PATH= C:\Users\haris\OneDrive\Desktop\Webfresh\opencv_contrib\modules ^ -DCMAKE_INCLUDE_PATH=C:/Users/haris/OneDrive/Desktop/Webfresh/opencv/3rdparty ^ -DCMAKE_LIBRARY_PATH=C:/Users/haris/OneDrive/Desktop/Webfresh/opencv/build_opencv/lib ^ -DWITH_EIGEN=ON ^ -DWITH_TBB=ON ^ -DBUILD_SHARED_LIBS=OFF ^ -DWITH_IPP=OFF  -DBUILD_opencv_world=ON ^ -DCMAKE_TOOLCHAIN_FILE=C:/Users/haris/OneDrive/Desktop/Webfresh/emsdk/upstream/emscripten/cmake/Modules/Platform/Emscripten.cmake ^ ..
+cmake --build . --target install
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+emcmake cmake -DCMAKE_BUILD_TYPE=Release ^ -DCMAKE_INSTALL_PREFIX=./install ^ -DCMAKE_PREFIX_PATH=C:/Users/haris/OneDrive/Desktop/Webfresh/opencv/build_opencv ^ -DOPENCV_DIR=C:/Users/haris/OneDrive/Desktop/Webfresh/opencv/build_opencv ^ -D OPENCV_EXTRA_MODULES_PATH= C:\Users\haris\OneDrive\Desktop\Webfresh\opencv_contrib\modules ^ -DCMAKE_INCLUDE_PATH=C:/Users/haris/OneDrive/Desktop/Webfresh/opencv/3rdparty ^ -DCMAKE_LIBRARY_PATH=C:/Users/haris/OneDrive/Desktop/Webfresh/opencv/build_opencv/lib ^ -DWITH_EIGEN=ON ^ -DWITH_TBB=ON ^ -DBUILD_SHARED_LIBS=OFF ^ -DBUILD_opencv_world=ON ^ -DCMAKE_TOOLCHAIN_FILE=C:/Users/haris/OneDrive/Desktop/Webfresh/emsdk/upstream/emscripten/cmake/Modules/Platform/Emscripten.cmake ^ ..
+
+
+RELATIVE_PATH IPPICV_INSTALL_PATH_RELATIVE_CONFIGCMAKE "${CMAKE_INSTALL_PREFIX}" "${IPPICV_INSTALL_PATH}
+RELATIVE_PATH OpenCV_INSTALL_PATH_RELATIVE_CONFIGCMAKE "${CMAKE_INSTALL_PREFIX}/${OPENCV_CONFIG_INSTALL_PATH}/" ${CMAKE_INSTALL_PREFIX}
+file(RELATIVE_PATH OpenCV_INSTALL_PATH_RELATIVE_CONFIGCMAKE "${CMAKE_INSTALL_PREFIX}/${__install_nested}" "${CMAKE_INSTALL_PREFIX}/"
+file(RELATIVE_PATH OPENCV_PYTHON_DIR_RELATIVE_CMAKECONFIG
+    "${CMAKE_INSTALL_PREFIX}/${OPENCV_SETUPVARS_INSTALL_PATH}/" "${CMAKE_INSTALL_PREFIX}/")
